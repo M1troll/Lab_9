@@ -1,0 +1,52 @@
+﻿<Window x:Class="Evil_List.BlackList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Evil_List"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Title="Черный список" Height="350" Width="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="220"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="Список мести :" FontWeight="Bold" FontSize="15" Background="red" />
+        <Label Content="Добавить ещё одну цель :" Grid.Column="1" FontWeight="Bold" FontSize="15" Background="red" />
+        <GroupBox   Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Margin="5" BorderBrush="OrangeRed" BorderThickness="3">
+            <ListBox Margin="10" ItemsSource="{Binding MyBlackList}" />
+        </GroupBox>
+        <Grid Grid.Column="0" Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Открыть файл" Margin="5" Command="{Binding OpenBlackList}" Grid.Column="0"/>
+            <Button Content="Обновить список" Margin="5" Command="{Binding RestartText}" Grid.Column="1"/>
+        </Grid>
+        <GroupBox Grid.Row="1" Grid.Column="1" Margin="5" BorderBrush="OrangeRed" BorderThickness="3">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="Преподаватель :" Grid.Row="0" VerticalAlignment="Bottom"/>
+                <ComboBox Grid.Row="1" Margin="5" ItemsSource="{Binding Teachers}" SelectedItem="{Binding HateTeacherName}"/>
+                <Label Content="Предмет :" Grid.Row="2" VerticalAlignment="Bottom"/>
+                <ComboBox Grid.Row="3" Margin="5" ItemsSource="{Binding Subjects}" SelectedItem="{Binding HateSubjectTitle}"/>
+                <Button Content="Добвать" Grid.Row="4" Margin="5" Command="{Binding AddNewPerson}"/>
+            </Grid>
+        </GroupBox>
+        <Button Grid.Row="2" Grid.RowSpan="2" Content="Выход" Grid.Column="1" Margin="10" FontSize="25" Name="ExitBtn"/>
+    </Grid>
+</Window>

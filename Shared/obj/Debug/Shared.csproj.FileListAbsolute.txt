@@ -1,0 +1,5 @@
+C:\Users\orochi\source\repos\Evil_List\Shared\bin\Debug\Shared.dll
+C:\Users\orochi\source\repos\Evil_List\Shared\bin\Debug\Shared.pdb
+C:\Users\orochi\source\repos\Evil_List\Shared\obj\Debug\Shared.csprojAssemblyReference.cache
+C:\Users\orochi\source\repos\Evil_List\Shared\obj\Debug\Shared.dll
+C:\Users\orochi\source\repos\Evil_List\Shared\obj\Debug\Shared.pdb
